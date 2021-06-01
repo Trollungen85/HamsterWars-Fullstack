@@ -1,0 +1,11 @@
+.home-info-section {
+    flex-direction: column;
+    justify-content: left;
+    background-color: #c4c4c4;
+}
+
+.img-home-random {
+    flex-direction: column;
+    justify-content: right;
+    background-color: #c4c4c4;
+}

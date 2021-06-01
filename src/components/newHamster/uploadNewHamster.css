@@ -1,0 +1,41 @@
+:root {
+	--error-color: #CE2B1C;
+	--valid-color: #249919;
+}
+
+.upload-form {
+	/* display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 100%; */
+	width: 30rem;
+}
+
+.upload-form label {
+	padding-left: 0.4em;
+    margin: 1.2em 0 0.3em 0;
+	
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+}
+  input[type='text'] {
+ 	margin: 0.2em 0 0.3em 0;
+    padding: 0.5em 1em;
+    height: 25px;
+    /* border: none; */
+    border-radius: 2px;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+.upload-form .message {
+	color: var(--error-color);
+}
+.upload-form .error {
+	border:  2px solid var(--error-color);
+}
+.upload-form .valid {
+	border:  2px solid var(--valid-color);
+}

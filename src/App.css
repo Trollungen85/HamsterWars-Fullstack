@@ -22,13 +22,13 @@ li {
 .component-header {
   display: flex;
   flex-direction: row;
-
 }
 
 .Logga {
   width: 127px;
   height: 69px;
   margin: 20px;
+  padding-left: 20px;
   justify-content: left;
 }
 
@@ -57,8 +57,8 @@ li {
 .App-main {
   height: 60vh;
   margin-top: 20px;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 img {

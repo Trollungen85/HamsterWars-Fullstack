@@ -22,9 +22,12 @@ const ModalWinner = ({ isShowing, hide, hamsterWins, hamsterLoser }) => isShowin
 						<div className="winner-article">
 							<HamsterCard
 								imgName={hamsterWins.imgName}
-								/>
-								<p>{hamsterWins.name} har vunnit {hamsterWins.wins + 1} av {hamsterWins.games + 1} spel och har {hamsterWins.defeats} förluster.</p>
-								<p>{hamsterWins.id}</p>
+							/>
+							<p>{hamsterWins.name} har:</p>
+							<p>{hamsterWins.wins + 1} vinster</p>
+							<p>{hamsterWins.defeats} förluster</p>
+							<p>antal tävlingar gjorda: {hamsterWins.games + 1}</p>
+
 							<Link to={`/HamsterProfile/${hamsterWins.id}`}>
 							Kika närmare på {hamsterWins.name}
 							</Link>
@@ -33,10 +36,12 @@ const ModalWinner = ({ isShowing, hide, hamsterWins, hamsterLoser }) => isShowin
 							<HamsterCard
 								imgName={hamsterLoser.imgName}
 							/>
+
 							<p>{hamsterLoser.name} har:</p>
-							<p>{hamsterLoser.defeats + 1} förluster</p>
 							<p>{hamsterLoser.wins} vinster</p>
+							<p>{hamsterLoser.defeats + 1} förluster</p>
 							<p>antal tävlingar gjorda: {hamsterLoser.games + 1}</p>
+
 							<Link to={`/HamsterProfile/${hamsterLoser.id}`}>
 								Kika närmare på {hamsterLoser.name}
 							</Link>

@@ -1,5 +1,3 @@
-// Vg del ( visa vilka hamstern har besegrat) -ska ligga i hamsterProfile.
-
 import useFetch from "../useFetch";
 import React, { useState } from 'react';
 import HamsterCard from "../../components/HamsterCard";

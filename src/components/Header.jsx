@@ -1,4 +1,5 @@
 import logo from "../assets/Logga.svg"
+
 const header = () => {
 	return (
         <header className="component-header">

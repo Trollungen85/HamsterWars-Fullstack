@@ -126,7 +126,7 @@ const Battle = () => {
 	return (
 		<div className="battle-wrapper">
 			<h1> Vem är sötast? </h1>
-			{ isLoaded ? <p>Loading...</p> : <>
+			{ isLoaded ? <p>Laddar...</p> : <>
 				{error && <div>{error}</div>}
 				<article className="contestants">
 					<div className="battle-card-one">

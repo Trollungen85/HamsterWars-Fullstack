@@ -1,5 +1,3 @@
-// Vg del ( visa vilka hamstern har besegrat) 
-
 import { useParams } from "react-router"
 import { useHistory } from 'react-router-dom'
 import useFetch from "../useFetch";

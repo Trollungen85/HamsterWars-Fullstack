@@ -9,12 +9,12 @@
 }
 
 .battle-card-one {
-    width: 50%;
+    width: 700px;
     flex-direction: column;
 }
 
 .battle-card-two {
-    width: 50%;
+    width: 700px;
     justify-content: flex-end;
 }
 
@@ -25,6 +25,5 @@
 }
 
 .battle-hamster-wrapper h2 {
-    text-underline-position: under;
-    color: #000000;
+    text-decoration: none;
 }

@@ -31,7 +31,6 @@
     background: white;
     position: relative;
     border-radius: 3px;
-    min-width: 50vw;
     padding: 2rem;
     align-self: center;
   }
@@ -59,9 +58,12 @@
 .winner-article {
   width: 50%;
   margin-bottom: 20px;
+  margin-right: 50px;
 }
 
 .loser-article {
   width: 50%;
+  margin-bottom: 20px;
+  margin-left: 50px;
   text-align: end;
 }

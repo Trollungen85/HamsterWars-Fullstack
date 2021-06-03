@@ -41,7 +41,7 @@ const Gallery = () => {
             <Link to={`/HamsterProfile/${hamsters.id}`}>
                 <HamsterCard 
                     imgName={hamsters.imgName}
-                    name={`Name: ${hamsters.name}`}
+                    name={`${hamsters.name}`}
                 />
             </Link>
         </li>
@@ -49,20 +49,20 @@ const Gallery = () => {
 
 	return (
 		<div className="content">
-			<h1>All hamsters</h1>
-			<button className="button-default" onClick={toggle}>Add new Hamster</button>
+			<h1>Alla Hamstrar</h1>
+			<button className="button-default" onClick={toggle}>Ladda upp ny Hamster</button>
             <ModalForms
                 isShowing={isShowing}
                 hide={toggle}
             />
 
-            { isLoaded ? <p>Loading...</p> : <>
+            { isLoaded ? <p>Laddar...</p> : <>
                 <article className="gallery-grid">
                     {error && <div>{error}</div>}
                     <ul>{renderHamsters}</ul>
                 </article>
-                <button onClick={prevPage}>Prev</button>
-                <button onClick={nextPage}>Next</button>
+                <button onClick={prevPage}>Föregående</button>
+                <button onClick={nextPage}>Nästa</button>
             </>}
 		</div>
 	)

@@ -1,11 +1,23 @@
-.home-info-section {
-    flex-direction: column;
-    justify-content: left;
-    background-color: #c4c4c4;
+h1 {
+    font-family: merge One;
+    margin-bottom: 20px;
+}
+.home-info-wrapper {
+    font-family: merge One;
+    display: flex;
 }
 
-.img-home-random {
-    flex-direction: column;
-    justify-content: right;
-    background-color: #c4c4c4;
+.home-img-random {
+    margin-left: 300px;
+}
+
+.info {
+    white-space: pre-wrap;
+    min-width: 350px;
+}
+
+.testbild {
+    width: 250px;
+    height: 250px;
+    margin-right: 50px;
 }

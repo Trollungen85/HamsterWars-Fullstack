@@ -1,8 +1,9 @@
+import logo from "../assets/Logga.svg"
 const header = () => {
 	return (
-        <header>
-            <div className="loggo"></div>
-            <div className="header-text"> HamsterWars - Let the game begin! </div>
+        <header className="component-header">
+            <img className="Logga" src={logo}alt="logga" />
+            <h1 className="Header-text"> HamsterWars - Let the game begin! </h1>
         </header>
 	)
 }

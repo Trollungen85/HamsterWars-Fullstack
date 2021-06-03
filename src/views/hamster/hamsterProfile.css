@@ -1,0 +1,12 @@
+.hamsterProfile-wrapper {
+    font-family: merge one;
+    text-align: center;
+}
+
+.hamsterProfile-wrapper button {
+    margin: 10px;
+}
+
+.hamsterProfile-wrapper article {
+    margin-top: 10px;
+}

@@ -1,3 +1,5 @@
+import "../views/battle/battle.css"
+
 const HamsterCard = (props) => {
 	const name = props.name
 	const imgName = props.imgName
@@ -10,7 +12,7 @@ const HamsterCard = (props) => {
 	const urlImg = '/img/'
 
 	return (
-		<article>
+		<article className="battle-hamster-wrapper">
 			<h2>{name}</h2>
 			<img src={urlImg + imgName} alt={name} />
 			<p>{age}</p>

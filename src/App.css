@@ -1,7 +1,6 @@
 *{
 	margin: 0;
 	padding: 0;
-  text-align: center;
 }
 
 .App {
@@ -9,23 +8,42 @@
   width: 100vw;
 }
 
+li {
+  list-style: none;
+}
+
 .App-header {
-  width: 100%;
-  height: 15vh;
-  padding-top: 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
-  font-size: 30px;
-  /* -webkit-text-stroke-width: thin; */
-  color: #02C2FF;
   background-color: #353535;
+}
+
+.component-header {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.Logga {
+  width: 127px;
+  height: 69px;
+  margin: 20px;
+  justify-content: left;
+}
+
+.Header-text {
+  font-family: Sedgwick Ave Display;
+  font-size: 30px;
+  place-self: center;
+  margin-left: 20%;
+  color: #02C2FF;
 }
 
 .App-nav-wrapper {
   width: 100%;
   height: 5vh;
+  text-align: center;
   background-color: #575757;
 }
 
@@ -37,19 +55,23 @@
 }
 
 .App-main {
-  /* height: 60vh; */
+  height: 60vh;
   margin-top: 20px;
   margin-left: 120px;
   margin-right: 120px;
 }
 
 img {
-	height: 33px;
-	width: 33px;
+	height: 150px;
+	width: 150px;
+  align-self: center;
 	object-fit: cover;
+  border-radius: 1rem;
 }
 
 .App-footer {
+  position: fixed;
+  bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;

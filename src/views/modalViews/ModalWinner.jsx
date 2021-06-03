@@ -1,5 +1,3 @@
-// REVIEW and do better
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HamsterCard from "../../components/HamsterCard";
@@ -19,35 +17,35 @@ const ModalWinner = ({ isShowing, hide, hamsterWins, hamsterLoser }) => isShowin
 					</button>
 				</div>
 				<div className="modal">
-					<h2>{hamsterWins.name} killed {hamsterLoser.name} with cutness!</h2>
-					<p>{hamsterWins.name} has won {hamsterWins.wins + 1} out of {hamsterWins.games + 1} games and lost {hamsterWins.defeats}.</p>
-					<p>{hamsterWins.id}</p>
+					<h2>{hamsterWins.name} vann över {hamsterLoser.name}</h2>
 					<div className="modal-hamster-cards">
 						<div className="winner-article">
 							<HamsterCard
 								imgName={hamsterWins.imgName}
-							/>
+								/>
+								<p>{hamsterWins.name} har vunnit {hamsterWins.wins + 1} av {hamsterWins.games + 1} spel och har {hamsterWins.defeats} förluster.</p>
+								<p>{hamsterWins.id}</p>
 							<Link to={`/HamsterProfile/${hamsterWins.id}`}>
-								Visit {hamsterWins.name}
+							Kika närmare på {hamsterWins.name}
 							</Link>
 						</div>
 						<div className="loser-article">
 							<HamsterCard
 								imgName={hamsterLoser.imgName}
 							/>
-							<p>{hamsterLoser.name} has:</p>
-							<p>lost {hamsterLoser.defeats + 1},</p>
-							<p>won {hamsterLoser.wins},</p>
-							<p>a total of {hamsterLoser.games + 1} games</p>
+							<p>{hamsterLoser.name} har:</p>
+							<p>{hamsterLoser.defeats + 1} förluster</p>
+							<p>{hamsterLoser.wins} vinster</p>
+							<p>antal tävlingar gjorda: {hamsterLoser.games + 1}</p>
 							<Link to={`/HamsterProfile/${hamsterLoser.id}`}>
-								Visit {hamsterLoser.name}
+								Kika närmare på {hamsterLoser.name}
 							</Link>
 						</div>
-						<button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
-							Play again!
-						</button>
 					</div>
 				</div>
+						<button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
+							Spela igen!
+						</button>
 			</div>
 		</div>
 	</React.Fragment>, document.body

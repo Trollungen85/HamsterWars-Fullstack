@@ -1,4 +1,3 @@
-//[ ] Create error message to display
 import { useState, useEffect } from 'react';
 
 const useFetch = () => {
@@ -13,19 +12,27 @@ const useFetch = () => {
 			try {
 				setIsLoaded(true);
 				const responseOne = await fetch('/hamsters/random', { method: 'GET' });
-				const resultOme = await responseOne.json();
+                const responseTwo = await fetch('/hamsters/random', { method: 'GET' });
 
-				const responseTwo = await fetch('/hamsters/random', { method: 'GET' });
-				const resultTwo = await responseTwo.json();
+                if (!responseOne.ok || !responseTwo.ok) {
+                    if (responseOne.status === 500 || responseTwo.status === 500) {
+                        console.log('500 (internal server error)')
+                        throw Error('Could not fetch the data for that resourse.  Please try again')
+                    }
+                    throw Error('Oh No! Someting went wrong! The error has to do with status code:', responseOne.status, 'Please try again')
+                }
+
+                const resultOne = await responseOne.json();
+                const resultTwo = await responseTwo.json();
 
 				setIsLoaded(false);
 
-				if (resultOme.id === resultTwo.id) {
+				if (resultOne.id === resultTwo.id) {
 					console.log("Two of the same!")
 					newGame ? setNewGame(false) : setNewGame(true);
 
 				} else {
-					setHamsterOne(resultOme)
+					setHamsterOne(resultOne)
 					setHamsterTwo(resultTwo)
 				}
 			} catch (error) {

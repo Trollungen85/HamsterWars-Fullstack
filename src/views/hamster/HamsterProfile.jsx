@@ -1,10 +1,9 @@
 // Vg del ( visa vilka hamstern har besegrat) 
-// Felmeddelande 500, "Vänligen försök ladda om sidan" (inne i fetch) använd catch för att fånga upp
-
 
 import { useParams } from "react-router"
 import { useHistory } from 'react-router-dom'
 import useFetch from "../useFetch";
+import "./hamsterProfile.css"
 
 const HamsterProfile = () => {
 
@@ -21,7 +20,7 @@ const HamsterProfile = () => {
 	const deleteHamster = async (id) => {
         console.log('Delete hamster', id)
 
-        if ((window.confirm("Delete the item?"))) {
+        if ((window.confirm("Vill du verkligen radera hamstern?"))) {
             console.log('throw the hamster away')
 
             try {
@@ -38,23 +37,23 @@ const HamsterProfile = () => {
     }
 
 	return (
-		<div>
+		<div className="hamsterProfile-wrapper">
 			{ isLoaded ? <p>Loading...</p> : <>
-				<h2>Hamster Data</h2>
-				<button onClick={goBack}>Go Back</button>
+				<h2>Hamster Information</h2>
+				<button onClick={goBack}>Backa</button>
 				{error && <div>{error}</div>}
 				{hamster && (
 					<article>
 						<img src={`/img/${hamster.imgName}`} alt={hamster.name} />
-						<h2>{`Name: ${hamster.name}`}</h2>
-						<p>{`Age: ${hamster.age}`}</p>
-						<p>{`Favorit Food: ${hamster.favFood}`}</p>
-						<p>{`Loves: ${hamster.loves}`}</p>
-						<p>{`Wins: ${hamster.wins}`}</p>
-						<p>{`Defeats: ${hamster.defeats}`}</p>
-						<p>{`Games: ${hamster.games}`}</p>
+						<h2>{`Namn: ${hamster.name}`}</h2>
+						<p>{`Ålder: ${hamster.age}`}</p>
+						<p>{`Favorit Mat: ${hamster.favFood}`}</p>
+						<p>{`Älskar Att: ${hamster.loves}`}</p>
+						<p>{`Vinster: ${hamster.wins}`}</p>
+						<p>{`Förluster: ${hamster.defeats}`}</p>
+						<p>{`Antal Spel: ${hamster.games}`}</p>
 
-						<button onClick={() => deleteHamster(hamster.id)}>Delete Hamster</button>
+						<button onClick={() => deleteHamster(hamster.id)}>Radera Hamster</button>
 					</article>
 				)}
 

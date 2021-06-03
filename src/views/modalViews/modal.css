@@ -24,12 +24,14 @@
   }
   
   .modal {
-  
+    display: flex;
+    flex-direction: column;
+    font-family: merge one;
     z-index: 100;
     background: white;
     position: relative;
     border-radius: 3px;
-  min-width: 70vw;
+    min-width: 50vw;
     padding: 2rem;
     align-self: center;
   }
@@ -48,3 +50,18 @@
     cursor: pointer;
     border: none;
   }
+
+.modal-hamster-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.winner-article {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.loser-article {
+  width: 50%;
+  text-align: end;
+}

@@ -1,0 +1,30 @@
+.battle-wrapper {
+    text-align: center;
+    font-family: merge One;
+}
+
+.contestants {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.battle-card-one {
+    width: 50%;
+    flex-direction: column;
+}
+
+.battle-card-two {
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.battle-hamster-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.battle-hamster-wrapper h2 {
+    text-underline-position: under;
+    color: #000000;
+}

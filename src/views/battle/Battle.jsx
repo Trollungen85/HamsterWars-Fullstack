@@ -5,7 +5,6 @@ import HamsterCard from "../../components/HamsterCard";
 import ModalWinner from "../modalViews/ModalWinner";
 import "./battle.css"
 
-
 const Battle = () => {
 
 	const [hamsterOne, setHamsterOne] = useState([]);
@@ -23,23 +22,30 @@ const Battle = () => {
 		setIsShowing(!isShowing);
 	}
 
-
 	useEffect(() => {
 		const fetchRandomHamster = async () => {
 			try {
 				setIsLoaded(true);
 				const responseOne = await fetch('/hamsters/random', { method: 'GET' });
-				const resultOme = await responseOne.json();
+                const responseTwo = await fetch('/hamsters/random', { method: 'GET' });
 
-				const responseTwo = await fetch('/hamsters/random', { method: 'GET' });
-				const resultTwo = await responseTwo.json();
+                if (!responseOne.ok || !responseTwo.ok) {
+                    if (responseOne.status === 500 || responseTwo.status === 500) {
+                        console.log('500 (internal server error)')
+                        throw Error('Could not fetch the data for that resourse.  Please try again')
+                    }
+                    throw Error('Oh No! Someting went wrong! The error has to do with status code:', responseOne.status, 'Please try again')
+                }
 
-				if (resultOme.id === resultTwo.id) {
+                const resultOne = await responseOne.json();
+                const resultTwo = await responseTwo.json();
+
+				if (resultOne.id === resultTwo.id) {
 					console.log("Two of the same!")
 					newGame ? setNewGame(false) : setNewGame(true);
 
 				} else {
-					setHamsterOne(resultOme)
+					setHamsterOne(resultOne)
 					setHamsterTwo(resultTwo)
 				}
 
@@ -52,7 +58,6 @@ const Battle = () => {
 		};
 		fetchRandomHamster();
 	}, [newGame]);
-
 
 	const handleClick = async (winner, loser) => {
 
@@ -119,41 +124,36 @@ const Battle = () => {
 	};
 
 	return (
-		<div className="battle">
-			<h1> Battle </h1>
+		<div className="battle-wrapper">
+			<h1> Vem är sötast? </h1>
 			{ isLoaded ? <p>Loading...</p> : <>
 				{error && <div>{error}</div>}
 				<article className="contestants">
-
-					<div className="battle-card">
+					<div className="battle-card-one">
 						<HamsterCard
 							imgName={hamsterOne.imgName}
-							name={`Name: ${hamsterOne.name}`}
-							age={`Age: ${hamsterOne.age}`}
-							favFood={`Favorit Food: ${hamsterOne.favFood}`}
-							loves={`Loves: ${hamsterOne.loves}`}
+							name={`Namn: ${hamsterOne.name}`}
+							age={`Ålder: ${hamsterOne.age}`}
+							favFood={`Favorit mat: ${hamsterOne.favFood}`}
+							loves={`Älskar att: ${hamsterOne.loves}`}
 						/>
 						<button onClick={() => handleClick(hamsterOne, hamsterTwo)}>
-							Pick {hamsterOne.name}
+							Jag väljer {hamsterOne.name}
 						</button>
 					</div>
-
-
-					<div >
+					<div className="battle-card-two">
 						<HamsterCard
 							imgName={hamsterTwo.imgName}
-							name={`Name: ${hamsterTwo.name}`}
-							age={`Age: ${hamsterTwo.age}`}
-							favFood={`Favorit Food: ${hamsterTwo.favFood}`}
-							loves={`Loves: ${hamsterTwo.loves}`}
+							name={`Namn: ${hamsterTwo.name}`}
+							age={`Ålder: ${hamsterTwo.age}`}
+							favFood={`Favorit mat: ${hamsterTwo.favFood}`}
+							loves={`Älskar att: ${hamsterTwo.loves}`}
 						/>
 						<button onClick={() => handleClick(hamsterTwo, hamsterOne)}>
-							Pick {hamsterTwo.name}
+							Jag väljer {hamsterTwo.name}
 						</button>
 					</div>
-
 				</article>
-
 			</>}
 			<ModalWinner
 				isShowing={isShowing}
@@ -161,8 +161,7 @@ const Battle = () => {
 				hamsterWins={hamsterWins}
 				hamsterLoser={hamsterLoser}
 			/>
-
-			<button onClick={() => setNewGame(!newGame)}>Two New Hamsters</button>
+			<button onClick={() => setNewGame(!newGame)}>Två nya hamstrar</button>
 		</div>
 	)
 }

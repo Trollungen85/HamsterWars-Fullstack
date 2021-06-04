@@ -17,7 +17,8 @@ ul {
     grid-auto-rows: auto;
     row-gap: 1.5em;
     column-gap: 2.5em;
-    margin: 2em;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     grid-auto-flow: dense;
 }
 
@@ -27,6 +28,7 @@ ul > * {
 
 li {
     inline-size: fit-content;
+    margin-bottom: 45px;
 }
    
 .hamster-profile {

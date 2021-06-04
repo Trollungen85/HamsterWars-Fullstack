@@ -1,3 +1,8 @@
+# Dokumentation
+Ett projekt i kursen effektiv frontend där både backend och frontend har byggts upp. 
+Jag siktar på VG i den här uppgiften, jag har inte gjort några level ups.
+Det är inte någon specifik del som jag önskar feedback i. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

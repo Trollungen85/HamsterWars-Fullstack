@@ -15,8 +15,8 @@ const Battle = () => {
 	const [isShowing, setIsShowing] = useState(false);
 	const [hamsterWins, setHamsterWins] = useState([]);
 	const [hamsterLoser, setHamsterLoser] = useState([]);
-	console.log(hamsterOne.id, hamsterOne.name);
-	console.log(hamsterTwo.id, hamsterTwo.name);
+	// console.log(hamsterOne.id, hamsterOne.name);
+	// console.log(hamsterTwo.id, hamsterTwo.name);
 
 	function toggle() {
 		setIsShowing(!isShowing);
@@ -95,7 +95,8 @@ const Battle = () => {
 				body: JSON.stringify(upDate)
 			});
 			const hamsterData = await response.json();
-			console.log('hej', hamsterData);
+
+			return hamsterData;
 
 		} catch (error) {
 			return error.message;

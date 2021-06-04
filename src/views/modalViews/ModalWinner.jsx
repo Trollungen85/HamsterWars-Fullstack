@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import "./modal.css"
 //https://upmostly.com/tutorials/modal-components-react-custom-hooks
 
-
 const ModalWinner = ({ isShowing, hide, hamsterWins, hamsterLoser }) => isShowing ? ReactDOM.createPortal(
 	<React.Fragment>
 		<div className="modal-overlay" />
